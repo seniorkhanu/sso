@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0gmmots"
+                  targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.18.0"
+                  modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.3.0"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://camunda.org/schema/modeler/1.0 ">
+  <bpmn:process id="Process_1cwf0ih" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1r66u6l</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1drdms9" name="Calculate Interest">
+      <bpmn:incoming>Flow_1r66u6l</bpmn:incoming>
+      <bpmn:outgoing>Flow_0yjxpo4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1r66u6l" sourceRef="StartEvent_1" targetRef="Activity_1drdms9"/>
+    <bpmn:task id="Activity_1crh54z" name="Approve Loan">
+      <bpmn:incoming>Flow_0yjxpo4</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0yjxpo4" sourceRef="Activity_1drdms9" targetRef="Activity_1crh54z"/>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1cwf0ih">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="99" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1drdms9_di" bpmnElement="Activity_1drdms9">
+        <dc:Bounds x="260" y="77" width="100" height="80"/>
+        <bpmndi:BPMNLabel/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1crh54z_di" bpmnElement="Activity_1crh54z">
+        <dc:Bounds x="430" y="77" width="100" height="80"/>
+        <bpmndi:BPMNLabel/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1r66u6l_di" bpmnElement="Flow_1r66u6l">
+        <di:waypoint x="188" y="117"/>
+        <di:waypoint x="260" y="117"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0yjxpo4_di" bpmnElement="Flow_0yjxpo4">
+        <di:waypoint x="360" y="117"/>
+        <di:waypoint x="430" y="117"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
